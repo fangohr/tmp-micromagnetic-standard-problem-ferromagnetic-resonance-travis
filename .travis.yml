@@ -11,15 +11,19 @@ before_install:
    texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra \
    texlive-latex-recommended dvipng"
 
-- sudo apt-get update -y; sudo apt-get -y install tk8.6 tcl8.6 tcl8.6-dev tk8.6-dev
-- git clone https://github.com/fangohr/oommf.git && cd oommf && make
 - export OOMMF_TK_CONFIG=/usr/lib/x86_64-linux-gnu/tk8.6/tkConfig.sh
 - export OOMMF_TCL_CONFIG=/usr/lib/x86_64-linux-gnu/tcl8.6/tclConfig.sh
+- sudo apt-get update -y; sudo apt-get -y install tk8.6 tcl8.6 tcl8.6-dev tk8.6-dev
+- git clone https://github.com/fangohr/oommf.git && cd oommf && make
+- export OOMMF_TCL="${pwd}/oommf"
 - alias oommf="tclsh ${OOMMF_TCL}/oommf.tcl"
-- oommf +version
-- pwd
+
 
 
 script:
-  py.test --version
-  make all
+  - pwd
+  - py.test --version
+  - echo $PATH
+  - python --version
+  - tclsh ${OOMMFTCL} +version
+  - cat $(which oommf)
