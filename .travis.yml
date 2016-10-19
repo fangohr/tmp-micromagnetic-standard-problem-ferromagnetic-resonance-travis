@@ -31,4 +31,4 @@ script:
   - python --version
   - echo $OOMMF_TCL
   - tclsh ${OOMMF_TCL} +version
-  - cat $(which oommf)
+  - make
