@@ -16,8 +16,8 @@ before_install:
 
 - export OOMMF_TK_CONFIG=/usr/lib/x86_64-linux-gnu/tk8.6/tkConfig.sh
 - export OOMMF_TCL_CONFIG=/usr/lib/x86_64-linux-gnu/tcl8.6/tclConfig.sh
-- sudo apt-get update -y; sudo apt-get -y install tk8.6 tcl8.6
-- tcl8.6-dev tk8.6-dev
+- sudo apt-get update -y; sudo apt-get -y install tk8.6 tcl8.6 \
+    tcl8.6-dev tk8.6-dev
 - mkdir -p /opt
 - cd /opt && git clone https://github.com/fangohr/oommf.git && cd oommf && make
 - alias oommf="tclsh ${OOMMF_TCL}/oommf.tcl"
