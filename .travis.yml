@@ -25,5 +25,6 @@ script:
   - py.test --version
   - echo $PATH
   - python --version
-  - tclsh ${OOMMFTCL} +version
+  - echo $OOMMF_TCL
+  - tclsh ${OOMMF_TCL} +version
   - cat $(which oommf)
