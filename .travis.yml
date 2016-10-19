@@ -23,7 +23,7 @@ before_install:
 - sudo pip3 install -U virtualenvwrapper
 - python3 -V
 - pip3 -V
-- pip3 install matplotlib
+- pip3 install matplotlib scipy numpy
 - python3 -c "import matplotlib"
 - sudo ln -s /usr/bin/python3 /usr/local/bin/python
 
