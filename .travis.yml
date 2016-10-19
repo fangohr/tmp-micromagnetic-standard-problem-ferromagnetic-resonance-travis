@@ -15,8 +15,13 @@ before_install:
 #   texlive-latex-recommended dvipng"
 - sudo apt-get update -y
 #- sudo apt-get install python3-matplotlib
-- sudo apt-get install -y python3-pip
-- python3-pip install matplotlib
+# - sudo apt-get install -y python3-pip
+- sudo apt-get -y install python3-pip python-dev
+- sudo pip3 install -U setuptools
+- sudo pip3 install -U virtualenvwrapper
+- python3 -V
+- pip3 -V
+- pip3 install matplotlib
 - python3 -c "import matplotlib"
 - ln -s /usr/bin/python3 /usr/local/bin/python
 
