@@ -2,7 +2,7 @@ os: linux
 dist: trusty
 
 env:
-  OOMMF_TCL=/opt/oommf/oommf
+  OOMMF_TCL=/opt/oommf/oommf/oommf.tcl
 
 language: python
 
@@ -20,7 +20,7 @@ before_install:
 - sudo apt-get -y install tk8.6 tcl8.6 tcl8.6-dev tk8.6-dev
 - mkdir -p /opt
 - cd /opt && git clone https://github.com/fangohr/oommf.git && cd oommf && make
-- alias oommf="tclsh ${OOMMF_TCL}/oommf.tcl"
+#- alias oommf="tclsh ${OOMMF_TCL}/oommf.tcl"
 
 
 
