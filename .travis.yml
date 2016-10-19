@@ -20,13 +20,15 @@ before_install:
 - sudo apt-get -y install tk8.6 tcl8.6 tcl8.6-dev tk8.6-dev
 - pwd
 - mkdir -p /opt
-- cd /opt && git clone https://github.com/fangohr/oommf.git && cd oommf && make
-
+- pushd /opt
+- git clone https://github.com/fangohr/oommf.git
+- cd oommf
+- make
+- popd
+- pwd
 
 
 script:
-  - pwd
-  - cd
   - pwd
   - py.test --version
   - echo $PATH
