@@ -25,7 +25,7 @@ before_install:
 - pip3 -V
 - pip3 install matplotlib
 - python3 -c "import matplotlib"
-- ln -s /usr/bin/python3 /usr/local/bin/python
+- sudo ln -s /usr/bin/python3 /usr/local/bin/python
 
 
 - export OOMMF_TK_CONFIG=/usr/lib/x86_64-linux-gnu/tk8.6/tkConfig.sh
