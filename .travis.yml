@@ -2,7 +2,7 @@ os: linux
 dist: trusty
 
 env:
-  OOMMF_TCL=/opt/oommf/oommf/oommf.tcl
+  OOMMFTCL=/opt/oommf/oommf/oommf.tcl
 
 language: python
 
@@ -18,17 +18,23 @@ before_install:
 - export OOMMF_TCL_CONFIG=/usr/lib/x86_64-linux-gnu/tcl8.6/tclConfig.sh
 - sudo apt-get update -y
 - sudo apt-get -y install tk8.6 tcl8.6 tcl8.6-dev tk8.6-dev
+- pwd
 - mkdir -p /opt
 - cd /opt && git clone https://github.com/fangohr/oommf.git && cd oommf && make
-#- alias oommf="tclsh ${OOMMF_TCL}/oommf.tcl"
 
 
 
 script:
   - pwd
+  - cd
+  - pwd
   - py.test --version
   - echo $PATH
   - python --version
-  - echo $OOMMF_TCL
-  - tclsh ${OOMMF_TCL} +version
-  - make
+  - echo $OOMMFTCL
+  - tclsh ${OOMMFTCL} +version
+  - make unit-tests
+  - make reproduce-figures-from-oommf-reference-data
+  - make recompute-oommf-data
+  - make compare-data
+  - make reproduce-figures-from-oommf-recomputed-data
