@@ -15,6 +15,9 @@ before_install:
    texlive-latex-recommended dvipng"
 - sudo apt-get update -y
 - sudo apt-get install python3-matplotlib
+- python3 -c "import matplotlib"
+- ln -s /usr/bin/python3 /usr/local/bin/python
+
 
 - export OOMMF_TK_CONFIG=/usr/lib/x86_64-linux-gnu/tk8.6/tkConfig.sh
 - export OOMMF_TCL_CONFIG=/usr/lib/x86_64-linux-gnu/tcl8.6/tclConfig.sh
