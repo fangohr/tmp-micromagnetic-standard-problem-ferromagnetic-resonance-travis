@@ -14,7 +14,7 @@ before_install:
    texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra \
    texlive-latex-recommended dvipng"
 - sudo apt-get update -y
-- sudo apt-get install python-matplotlib
+- sudo apt-get install python3-matplotlib
 
 - export OOMMF_TK_CONFIG=/usr/lib/x86_64-linux-gnu/tk8.6/tkConfig.sh
 - export OOMMF_TCL_CONFIG=/usr/lib/x86_64-linux-gnu/tcl8.6/tclConfig.sh
@@ -37,6 +37,7 @@ script:
   - python --version
   - echo $OOMMFTCL
   - tclsh ${OOMMFTCL} +version
+  - python -c "import matplotlib"
   - make unit-tests
   - make reproduce-figures-from-oommf-reference-data
   - make recompute-oommf-data
