@@ -14,7 +14,8 @@ before_install:
    texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra \
    texlive-latex-recommended dvipng"
 - sudo apt-get update -y
-- sudo apt-get install python3-matplotlib
+#- sudo apt-get install python3-matplotlib
+- sudo pip install matplotlib
 - python3 -c "import matplotlib"
 - ln -s /usr/bin/python3 /usr/local/bin/python
 
